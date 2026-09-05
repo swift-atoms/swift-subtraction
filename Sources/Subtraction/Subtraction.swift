@@ -2,7 +2,9 @@ public import Addition
 public import Polarity
 
 /// Subtraction identity and canonical fixed-width integer arithmetic.
-public enum Subtraction {
+public enum Subtraction {}
+
+extension Subtraction {
     public enum Error: Swift.Error, Hashable, Sendable {
         case overflow
     }
