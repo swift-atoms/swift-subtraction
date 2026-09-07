@@ -1,7 +1,7 @@
 public import Addition
 public import Polarity
 
-/// Subtraction identity and canonical fixed-width integer arithmetic.
+
 public enum Subtraction {}
 
 extension Subtraction {
@@ -35,7 +35,7 @@ extension Subtraction {
         return Value.isSigned && rhs < .zero ? .max : .min
     }
 
-    /// Subtraction of values represented by binary polarity and unsigned magnitude.
+
     public enum Signed {}
 }
 
