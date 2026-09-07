@@ -13,8 +13,8 @@ let package = Package(
     ],
     products: [
         .library(name: "Subtraction", targets: ["Subtraction"]),
-        .library(name: "Subtraction Standard Library Integration", targets: ["Subtraction Standard Library Integration"]),
-        .library(name: "Subtraction Foundation Library Integration", targets: ["Subtraction Foundation Library Integration"]),
+
+        .library(name: "Subtraction Foundation Integration", targets: ["Subtraction Foundation Integration"]),
         .library(name: "Subtraction Test Support", targets: ["Subtraction Test Support"]),
     ],
     dependencies: [
@@ -30,20 +30,13 @@ let package = Package(
             ],
             path: "Sources/Subtraction"
         ),
+        
         .target(
-            name: "Subtraction Standard Library Integration",
+            name: "Subtraction Foundation Integration",
             dependencies: [
                 .target(name: "Subtraction"),
             ],
-            path: "Sources/Subtraction Standard Library Integration"
-        ),
-        .target(
-            name: "Subtraction Foundation Library Integration",
-            dependencies: [
-                .target(name: "Subtraction"),
-                .target(name: "Subtraction Standard Library Integration"),
-            ],
-            path: "Sources/Subtraction Foundation Library Integration"
+            path: "Sources/Subtraction Foundation Integration"
         ),
         .target(
             name: "Subtraction Test Support",
@@ -58,8 +51,7 @@ let package = Package(
                 .target(name: "Subtraction"),
                 .product(name: "Polarity", package: "swift-polarity"),
                 .target(name: "Subtraction Test Support"),
-                .target(name: "Subtraction Standard Library Integration"),
-                .target(name: "Subtraction Foundation Library Integration"),
+                .target(name: "Subtraction Foundation Integration"),
             ],
             path: "Tests/Subtraction Tests"
         ),
